@@ -22,8 +22,11 @@
         <cite class="text-muted">Written by {{book.author}}</cite>
         <p>{{book.review}}</p>
 
-      <span class="label label-primary">{{book.genre}}</span>
-
+      <ul class="list-unstyled">
+        <li ng-repeat="(genre, state) in book.genres" ng-show="state">
+          <span class="label label-primary">{{genre}}</span>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>
