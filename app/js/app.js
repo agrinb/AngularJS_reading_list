@@ -6,6 +6,7 @@
   .controller('ReadingListController', function(){
     this.books = books;
     this.genres = genres;
+    this.showForm = false;
   })
 
   .directive('bookGenres', function(){
@@ -33,6 +34,12 @@
   		replace: true,
   		controller: function(){
   			this.book = {genres:{}};
+
+        this.addReview = function(form){
+          books.push(this.book);
+          this.book = {genres:{}};
+          form.$setPristine();
+        }
   		},
   		controllerAs: 'reviewFormCtrl',
   		scope: {
