@@ -1,7 +1,14 @@
 (function(){
   'use strict';
 
-  angular.module('readingList', []);
+  angular.module('readingList', [])
+
+  .controller('ReadingListController', function(){
+    this.books = books;
+    this.genres = genres;
+  })
+
+
 
   var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
 
@@ -36,5 +43,4 @@
       genres: { 'non-fiction': true, fantasy: true }
     }
   ];
-  
 })();

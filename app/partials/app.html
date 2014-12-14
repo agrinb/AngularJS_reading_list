@@ -1,6 +1,7 @@
 <h1>Angular Reading List of Awesome</h1>
 
-<div class="row">
+<div class="row" ng-controller="ReadingListController as readingListCtrl">
+
 
   <button class="btn btn-default">Button</button>
   <hr />
@@ -8,19 +9,20 @@
   <hr />
 
   <ul class="list-unstyled col-sm-8">
-    <li class="book row">
+    <li class="book row" ng-repeat="book in readingListCtrl.books">
       <aside class="col-sm-3">
-        <a href="http://www.amazon.com/gp/product/0553593714">
-          <img ng-src="http://images.amazon.com/images/P/0553593714.01.ZTZZZZZZ.jpg" alt="Cover of Book Title" class="full">
-        </a>
 
+        <a href="http://www.amazon.com/gp/product/{{book.isbn}}"><img ng-src="http://images.amazon.com/images/P/{{book.isbn}}.01.ZTZZZZZZ.jpg" alt="Cover of {{book.title}}" class="full"></a>
 
-
-        <p class="goodRating rating">5/5</p>
+        <p ng-class="{goodRating: book.rating >= 3}" class="rating">{{book.rating}}/5</p>
       </aside>
+
       <div class="col-sm-9">
-      <h3><a href="http://www.amazon.com/gp/product/0553593714">Book Title</a></h3>
-        <cite class="text-muted">Written by </cite>
+      <h3><a href="http://www.amazon.com/gp/product/{{book.isb}}">{{book.title}}</a></h3>
+        <cite class="text-muted">Written by {{book.author}}</cite>
+        <p>{{book.review}}</p>
+
+      <span class="label label-primary">{{book.genre}}</span>
 
     </li>
   </ul>
