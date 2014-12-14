@@ -31,9 +31,8 @@
   		restrict: 'E',
   		templateUrl: 'partials/review-form.html',
   		replace: true,
-  		contorller: function(){
-  			this.showForm = false;
-  			this.book = {};
+  		controller: function(){
+  			this.book = {genres:{}};
   		},
   		controllerAs: 'reviewFormCtrl',
   		scope: {
@@ -42,6 +41,8 @@
   		}
   	}
   });
+
+
 
 
 
