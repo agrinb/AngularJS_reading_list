@@ -8,6 +8,28 @@
     this.genres = genres;
   })
 
+  .directive('bookGenres', function(){
+  	return {
+  		restrict: 'E',
+  		templateUrl: 'partials/book-genres.html'	
+  	}
+  })
+
+  .directive('bookCover', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'partials/book-cover.html',
+			replace: true
+		}
+  })
+
+  .directive('bookGenres', function(){
+  	return {
+  		restrict: 'E',
+  		templateUrl: 'partials/review-form.html'	
+  	}
+  });
+
 
 
   var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
