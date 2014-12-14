@@ -23,10 +23,15 @@
 		}
   })
 
-  .directive('bookGenres', function(){
+  .directive('reviewForm', function(){
   	return {
   		restrict: 'E',
-  		templateUrl: 'partials/review-form.html'	
+  		templateUrl: 'partials/review-form.html',
+  		replace: true,
+  		contorller: function(){
+  			this.showForm = false;
+  		},
+  		controllerAs: 'reviewFormCtrl'
   	}
   });
 
